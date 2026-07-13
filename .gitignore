@@ -1,0 +1,25 @@
+# Python virtual environment
+work/venv/
+work/mujoco-wheel/
+
+# macOS
+.DS_Store
+__pycache__/
+*.pyc
+
+# MuJoCo build files
+.mujoco/
+build/
+
+# IDE
+.idea/
+.vscode/
+
+# Backup files
+*.bak
+
+# Original cloned model (duplicate of top-level files)
+work/model/
+
+# MuJoCo log
+MUJOCO_LOG.TXT

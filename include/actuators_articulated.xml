@@ -1,0 +1,16 @@
+<mujocoinclude>
+    <actuator>
+        <velocity joint='base_x'     kv="500" ctrlrange="-1 1"/>
+        <velocity joint='base_y'     kv="500" ctrlrange="-1 1"/>
+        <velocity joint='base_theta' kv="500" ctrlrange="-1 1"/>
+        <position joint='shoulder_pan'  kp="300" kv="60"  ctrlrange="-6.28 6.28" forcerange="-200 200"/>
+        <position joint='shoulder_lift' kp="300" kv="60"  ctrlrange="-6.28 6.28" forcerange="-400 400"/>
+        <position joint='elbow'        kp="300" kv="60"  ctrlrange="-6.28 6.28" forcerange="-300 300"/>
+        <position joint='wrist_1'      kp="200" kv="40"  ctrlrange="-6.28 6.28" forcerange="-100 100"/>
+        <position joint='wrist_2'      kp="200" kv="40"  ctrlrange="-6.28 6.28" forcerange="-100 100"/>
+        <position joint='wrist_3'      kp="200" kv="40"  ctrlrange="-6.28 6.28" forcerange="-100 100"/>
+        <!-- Gentle gripper: low kp, low force, tiny range -->
+        <position joint='grp_L' kp="50" kv="5" ctrlrange="-0.015 0.015" forcerange="-2 2"/>
+        <position joint='grp_R' kp="50" kv="5" ctrlrange="-0.015 0.015" forcerange="-2 2"/>
+    </actuator>
+</mujocoinclude>

@@ -1,0 +1,24 @@
+<mujoco model="ur5_articulated">
+    <compiler angle="radian" />
+    <size njmax="500" nconmax="100" />
+
+    <asset>
+        <include file="include/table_assets.xml"/>
+        <include file="include/robot_assets.xml"/>
+    </asset>
+
+    <worldbody>
+        <geom name="tableTop" material="MatGnd" type="plane" pos="0. 0. -0.3168" size="3.3 3.3 0.5" rgba="1. 1. 1. 1" contype="1" conaffinity="1"/>
+        <include file="include/robot_articulated.xml"/>
+    </worldbody>
+
+    <include file="include/actuators_articulated.xml"/>
+
+    <!-- Initial joint positions to match current model pose (degrees converted to rad) -->
+
+    <keyframe>
+        <key name="home"
+            qpos="0 0 0  -1.5708 -3.054 -0.0873 -3.1416 -1.5708 -3.1416  0 0"
+        />
+    </keyframe>
+</mujoco>
