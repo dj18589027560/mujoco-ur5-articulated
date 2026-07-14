@@ -2,6 +2,9 @@
     <compiler angle="radian" autolimits="true"/>
 
     <default>
+    <default class="cube_body">
+      <geom contype="1" conaffinity="1"/>
+    </default>
 <default class="2f85">
       <mesh scale="0.001 0.001 0.001"/>
       <general biastype="affine"/>
@@ -22,7 +25,7 @@
       </default>
 
       <default class="visual">
-        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+        <geom type="mesh" contype="1" conaffinity="1" mass="0.01" group="2"/>
       </default>
       <default class="collision">
         <geom type="mesh" group="3"/>
@@ -57,7 +60,18 @@
     </asset>
 
     <worldbody>
-        <geom name="tableTop" material="MatGnd" type="plane" pos="0. 0. -0.3168" size="3.3 3.3 0.5" rgba="1. 1. 1. 1" contype="1" conaffinity="1"/>
+        <camera name="top_down" mode="fixed" pos="0.4 0.4 1.2" euler="0 0 0"/>
+        <body name="target_marker" pos="0.55 0 0.12">
+            <freejoint name="cube_joint"/>
+            <geom name="target_geom" type="box" size="0.02 0.02 0.02" rgba="0.9 0.2 0.2 1" mass="0.01" contype="1" conaffinity="1"/>
+        </body>
+
+        
+        <body name="platform" pos="0.55 0 0">
+            <geom name="platform_geom" type="cylinder" size="0.03 0.12" rgba="0.4 0.4 0.4 1" contype="1" conaffinity="1"/>
+        </body>
+        
+        <geom name="tableTop" material="MatGnd" type="plane" pos="0. 0. -0.3168" size="3.3 3.3 0.5" rgba="1. 1. 1. 1" contype="1" conaffinity="1" solref="0.01 1"/>
 <body name="robot" pos="0.0 0.0 0.0">
         <!-- Ridgeback base visuals -->
         <geom pos="0 0 -0.28" type="mesh" rgba="0.15 0.15 0.15 1" mesh="body-collision" />
@@ -219,18 +233,19 @@
         </body>
     </body>
     </worldbody>
+    
 
 <actuator>
         <velocity joint='base_x'     kv="500" ctrlrange="-1 1"/>
         <velocity joint='base_y'     kv="500" ctrlrange="-1 1"/>
         <velocity joint='base_theta' kv="500" ctrlrange="-1 1"/>
-        <position joint='shoulder_pan'  kp="300" kv="60"  ctrlrange="-6.28 6.28" forcerange="-200 200"/>
-        <position joint='shoulder_lift' kp="300" kv="60"  ctrlrange="-6.28 6.28" forcerange="-400 400"/>
-        <position joint='elbow'        kp="300" kv="60"  ctrlrange="-6.28 6.28" forcerange="-300 300"/>
-        <position joint='wrist_1'      kp="200" kv="40"  ctrlrange="-6.28 6.28" forcerange="-100 100"/>
-        <position joint='wrist_2'      kp="200" kv="40"  ctrlrange="-6.28 6.28" forcerange="-100 100"/>
-        <position joint='wrist_3'      kp="200" kv="40"  ctrlrange="-6.28 6.28" forcerange="-100 100"/>
-    </actuator>
+        <position joint='shoulder_pan'  kp="50000" kv="300"  ctrlrange="-6.28 6.28" forcerange="-500 500"/>
+        <position joint='shoulder_lift' kp="50000" kv="300"  ctrlrange="-6.28 6.28" forcerange="-500 500"/>
+        <position joint='elbow'        kp="50000" kv="300"  ctrlrange="-6.28 6.28" forcerange="-500 500"/>
+        <position joint='wrist_1'      kp="30000" kv="300"  ctrlrange="-6.28 6.28" forcerange="-300 300"/>
+        <position joint='wrist_2'      kp="30000" kv="300"  ctrlrange="-6.28 6.28" forcerange="-300 300"/>
+        <position joint='wrist_3'      kp="30000" kv="300"  ctrlrange="-6.28 6.28" forcerange="-300 300"/>
+        <position joint="grp_right_driver_joint" kp="500" kv="20" ctrlrange="0 0.8" forcerange="-50 50"/>    </actuator>
     <tendon>
         <fixed name="split">
             <joint joint="grp_right_driver_joint" coef="0.5"/>
