@@ -9,8 +9,5 @@
         <position joint='wrist_1'      kp="200" kv="40"  ctrlrange="-6.28 6.28" forcerange="-100 100"/>
         <position joint='wrist_2'      kp="200" kv="40"  ctrlrange="-6.28 6.28" forcerange="-100 100"/>
         <position joint='wrist_3'      kp="200" kv="40"  ctrlrange="-6.28 6.28" forcerange="-100 100"/>
-        <!-- Gentle gripper: low kp, low force, tiny range -->
-        <position joint='grp_L' kp="50" kv="5" ctrlrange="-0.015 0.015" forcerange="-2 2"/>
-        <position joint='grp_R' kp="50" kv="5" ctrlrange="-0.015 0.015" forcerange="-2 2"/>
     </actuator>
 </mujocoinclude>

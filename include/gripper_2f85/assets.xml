@@ -1,0 +1,15 @@
+
+    <material name="gripper_metal" rgba="0.58 0.58 0.58 1"/>
+    <material name="gripper_silicone" rgba="0.1882 0.1882 0.1882 1"/>
+    <material name="gripper_gray" rgba="0.4627 0.4627 0.4627 1"/>
+    <material name="gripper_black" rgba="0.149 0.149 0.149 1"/>
+
+    <mesh class="2f85" file="include/gripper_2f85/assets/gripper_base_mount.stl"/>
+    <mesh class="2f85" file="include/gripper_2f85/assets/gripper_base.stl"/>
+    <mesh class="2f85" file="include/gripper_2f85/assets/gripper_driver.stl"/>
+    <mesh class="2f85" file="include/gripper_2f85/assets/gripper_coupler.stl"/>
+    <mesh class="2f85" file="include/gripper_2f85/assets/gripper_follower.stl"/>
+    <mesh class="2f85" file="include/gripper_2f85/assets/gripper_pad.stl"/>
+    <mesh class="2f85" file="include/gripper_2f85/assets/gripper_silicone_pad.stl"/>
+    <mesh class="2f85" file="include/gripper_2f85/assets/gripper_spring_link.stl"/>
+  
